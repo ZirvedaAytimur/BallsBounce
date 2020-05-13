@@ -98,6 +98,13 @@ int main() {
 			ballYPos += 3;
 		}
 
+		// end of the game
+
+		if ((ballXPos<layerXPos||ballXPos>layerXPos+60)&&ballYPos>=540)
+		{
+			system("pause");
+		}
+
 		al_draw_filled_rectangle(layerXPos, layerYPos, layerXPos + 60, layerYPos + 10, al_map_rgb(255, 255, 255));
 		al_draw_filled_circle(ballXPos, ballYPos, 10, al_map_rgb(255, 255, 255));
 		al_flip_display();
