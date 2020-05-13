@@ -1,6 +1,8 @@
 ﻿#include<stdio.h>
 #include<allegro5/allegro.h>
 #include<allegro5/allegro_primitives.h>
+#include<allegro5/allegro_font.h>
+#include<allegro5/allegro_ttf.h>
 
 int main() {
 
@@ -17,6 +19,11 @@ int main() {
 	queue = al_create_event_queue();
 	al_start_timer(timer);
 
+	al_init_font_addon();
+	al_init_ttf_addon();
+
+	ALLEGRO_FONT* font = al_load_font("Merriweather-BoldIt.ttf", 24, 0);
+
 	int layerXPos = 280, layerYPos = 550; // for layer
 	int ballXPos = 310, ballYPos = 540; // for ball
 	int direction = 1; // for ball's move
@@ -32,6 +39,14 @@ int main() {
 
 		al_clear_to_color(al_map_rgb(0, 0, 0));
 
+		// text
+
+		al_draw_text(font, al_map_rgb(255, 0, 255), 20, 10, 0, "Last");
+		al_draw_textf(font, al_map_rgb(255, 0, 255), 70, 10, 0, "%d",layerXPos);
+		al_draw_text(font, al_map_rgb(255, 0, 255), 120, 10, 0, "Balls");
+
+		// layer
+
 		if (ev.keyboard.keycode == ALLEGRO_KEY_RIGHT && layerXPos < 525)
 		{
 			layerXPos += 10;
@@ -40,6 +55,8 @@ int main() {
 		{
 			layerXPos -= 10;
 		}
+
+		// ball's direction
 
 		if (abs(ballYPos-layerYPos)<=10)
 		{
@@ -57,6 +74,8 @@ int main() {
 		{
 			direction = 4;
 		}
+
+		// balls's movement
 
 		if (direction==1)
 		{
