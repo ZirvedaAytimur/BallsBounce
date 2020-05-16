@@ -14,7 +14,7 @@ int main() {
 	al_init();
 	al_install_keyboard();
 
-	display = al_create_display(600, 600);
+	display = al_create_display(600, 700);
 	timer = al_create_timer(1.0 / 20); // saniyede gönderme hızı
 	queue = al_create_event_queue();
 	al_start_timer(timer);
@@ -24,8 +24,8 @@ int main() {
 
 	ALLEGRO_FONT* font = al_load_font("Merriweather-BoldIt.ttf", 24, 0);
 
-	int layerXPos = 280, layerYPos = 550; // for layer
-	int ballXPos = 310, ballYPos = 540; // for ball
+	int layerXPos = 280, layerYPos = 650; // for layer
+	int ballXPos = 310, ballYPos = 640; // for ball
 	int direction = 1; // for ball's move
 
 	al_register_event_source(queue, al_get_display_event_source(display));
@@ -66,7 +66,7 @@ int main() {
 		{
 			direction = 2;
 		}
-		else if (ballYPos<=10)
+		else if (ballYPos>=50&&ballYPos<=60)
 		{
 			direction = 3;
 		}
@@ -100,7 +100,7 @@ int main() {
 
 		// end of the game
 
-		if ((ballXPos<layerXPos||ballXPos>layerXPos+60)&&ballYPos>=540)
+		if ((ballXPos<layerXPos||ballXPos>layerXPos+60)&&ballYPos>=640)
 		{
 			system("pause");
 		}
