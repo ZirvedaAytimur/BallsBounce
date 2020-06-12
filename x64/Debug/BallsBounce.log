@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\Source.cpp(79,42): warning C4309: 'argument': truncation of constant value
+C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\Source.cpp(80,43): warning C4309: 'argument': truncation of constant value
+C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\Source.cpp(81,42): warning C4309: 'argument': truncation of constant value
+  BallsBounce.vcxproj -> C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\x64\Debug\BallsBounce.exe

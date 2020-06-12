@@ -1,0 +1,2 @@
+C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\x64\Debug\BallsBounce.exe
+C:\Users\zirve\Desktop\okul\1.sınıf\algoritmaLab\BallsBounce\x64\Debug\BallsBounce.pdb

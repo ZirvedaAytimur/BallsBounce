@@ -1,4 +1,5 @@
 ﻿#include<stdio.h>
+#include<math.h>
 #include<allegro5/allegro.h>
 #include<allegro5/allegro_primitives.h>
 #include<allegro5/allegro_font.h>
@@ -146,7 +147,21 @@ int main() {
 		{
 			if (boxes[i][2] == 1)
 			{
-				al_draw_filled_rectangle(boxes[i][0], boxes[i][1], boxes[i][0] + 60, boxes[i][1] + 60, al_map_rgb(255, 255, 255));
+				al_draw_filled_rectangle(boxes[i][0], boxes[i][1], boxes[i][0] + 60, boxes[i][1] + 60, al_map_rgb(210, 47, 140));
+			}
+		}
+
+		// collision
+
+		float distance = 10 + 30 * sqrt(2);
+		for (int i = 0; i < 20; i++)
+		{
+			if (boxes[i][2] == 1) {
+				float box = boxes[i][0] + (30 * sqrt(2));
+				if (fabs(ballXPos - boxes[i][0]) <= distance && fabs(ballYPos - boxes[i][1]) <= distance) {
+					boxes[i][2] = 0;
+					numberOfBalls--;
+				}
 			}
 		}
 		
